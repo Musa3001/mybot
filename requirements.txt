@@ -1,5 +1,4 @@
 requests
 ccxt
 flask
-python-telegram-bot
 pandas
