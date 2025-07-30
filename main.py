@@ -6,9 +6,21 @@ from ta.volatility import BollingerBands
 import time
 import logging
 from datetime import datetime, timedelta
-from keep_alive import keep_alive
+from flask import Flask
+import threading
 
-keep_alive()
+# --- Keep Alive Web Server ---
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I'm alive!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+threading.Thread(target=run).start()
+
 
 # Your bot code continues below...
 
